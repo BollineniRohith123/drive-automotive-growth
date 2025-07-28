@@ -96,9 +96,11 @@ const ServicesPreview = () => {
                   ))}
                 </div>
 
-                <Button variant="outline" className="w-full group">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <Button variant="outline" className="w-full group" asChild>
+                  <Link to="/services">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
               </div>
             </div>

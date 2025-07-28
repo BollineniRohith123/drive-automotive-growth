@@ -179,9 +179,11 @@ const Services = () => {
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-border">
-                  <Button variant="ghost" size="sm" className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300">
-                    Learn More
-                    <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                  <Button variant="ghost" size="sm" className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300" asChild>
+                    <Link to="/contact">
+                      Get Quote
+                      <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               </div>
