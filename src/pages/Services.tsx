@@ -6,15 +6,17 @@ import {
   CheckCircle, Target, Database, Globe, TrendingUp, Laptop, Eye, ArrowUp 
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { openWhatsAppConsultation, getServiceSpecificMessage } from "@/lib/whatsapp";
 import automotiveTech from "@/assets/automotive-tech.jpg";
 
 const Services = () => {
   const services = [
     {
-      icon: <Users className="h-8 w-8 text-accent" />,
-      title: "Manpower (Recruitment & Training)",
-      description: "Comprehensive talent acquisition and development programs tailored for the automotive industry.",
-      features: ["Strategic recruitment", "Skills assessment", "Training programs", "Performance development"]
+      icon: <Settings className="h-8 w-8 text-accent" />,
+      title: "Operational Excellence",
+      description: "Shop floor management, productivity optimization, and process improvement for maximum efficiency.",
+      features: ["Process optimization", "Cost control", "Quality management", "Operational efficiency"]
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-accent" />,
@@ -105,6 +107,12 @@ const Services = () => {
       title: "Supply Chain & Operations",
       description: "End-to-end supply chain optimization and operational excellence solutions.",
       features: ["Supply chain design", "Logistics optimization", "Operational efficiency", "Vendor relations"]
+    },
+    {
+      icon: <Users className="h-8 w-8 text-accent" />,
+      title: "Manpower (Recruitment & Training)",
+      description: "Comprehensive talent acquisition and development programs tailored for the automotive industry.",
+      features: ["Strategic recruitment", "Skills assessment", "Training programs", "Performance development"]
     }
   ];
 
@@ -128,12 +136,16 @@ const Services = () => {
             We position our clients at the forefront of their field by advancing an agenda 
             of innovation, efficiency, and sustainable growth.
           </p>
-          <Button variant="accent" size="lg" asChild>
-            <Link to="/contact">
-              Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <WhatsAppButton 
+            variant="accent" 
+            size="lg"
+            options={{
+              source: "services_hero",
+              service: "General Services Consultation"
+            }}
+          >
+            Get Started Today
+          </WhatsAppButton>
         </div>
       </section>
 
@@ -179,11 +191,18 @@ const Services = () => {
                 </div>
 
                 <div className="mt-4 pt-4 border-t border-border">
-                  <Button variant="ghost" size="sm" className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300" asChild>
-                    <Link to="/contact">
-                      Get Quote
-                      <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full group-hover:bg-primary/10 group-hover:text-primary transition-all duration-300"
+                    onClick={() => openWhatsAppConsultation({
+                      source: "services_card",
+                      service: service.title,
+                      message: getServiceSpecificMessage(service.title)
+                    })}
+                  >
+                    Get Quote
+                    <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </div>
@@ -240,12 +259,16 @@ const Services = () => {
             the right solutions for your automotive business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="accent" size="lg" asChild>
-              <Link to="/contact">
-                Book Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <WhatsAppButton 
+              variant="accent" 
+              size="lg"
+              options={{
+                source: "services_cta",
+                service: "Comprehensive Business Solutions"
+              }}
+            >
+              Book Free Consultation
+            </WhatsAppButton>
             <Button variant="outline" size="lg" className="text-white border-white hover:bg-white hover:text-primary">
               <a href="tel:+919491398821">Call Now: +91 94913 98821</a>
             </Button>

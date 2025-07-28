@@ -29,46 +29,8 @@ const AboutPreview = () => {
   return (
     <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Founder Info */}
-          <div className="animate-fade-in">
-            <div className="mb-8">
-              <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-foreground mb-4">
-                Meet <span className="text-primary">Uma Mahesh</span>
-              </h2>
-              <h3 className="font-lato text-xl text-accent font-semibold mb-6">
-                Founder & Managing Director
-              </h3>
-              
-              <div className="relative">
-                <img 
-                  src="/lovable-uploads/1561dbe7-14ac-46ad-b3d4-d5c5d2d4a41a.png" 
-                  alt="Uma Mahesh - Founder & Managing Director"
-                  className="w-64 h-64 rounded-lg object-cover shadow-elegant mb-6"
-                />
-                <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-4 py-2 rounded-lg shadow-glow font-semibold">
-                  27+ Years
-                </div>
-              </div>
-            </div>
-            
-            <blockquote className="border-l-4 border-primary pl-6 mb-8">
-              <p className="font-lato text-lg text-muted-foreground italic mb-4">
-                "Our commitment goes beyond consulting – we partner with our clients to create 
-                sustainable growth, operational excellence, and lasting success in the automotive industry."
-              </p>
-              <cite className="font-montserrat font-semibold text-primary">- Uma Mahesh</cite>
-            </blockquote>
-
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/about">
-                Learn More About Us
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </div>
-
-          {/* Right Column - Why Choose Us */}
+        <div className="max-w-4xl mx-auto">
+          {/* Why Choose Us */}
           <div className="animate-slide-up">
             <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-foreground mb-8">
               Why Choose <span className="text-accent">Uma Consultancy</span>?

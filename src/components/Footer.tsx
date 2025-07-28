@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Footer = () => {
   const quickLinks = [
@@ -104,12 +105,16 @@ const Footer = () => {
             <p className="font-lato text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
               Make a free consultation with our expert team to solve your problems and unlock your business potential.
             </p>
-            <Button variant="accent" size="lg" asChild>
-              <Link to="/contact">
-                Book Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <WhatsAppButton 
+              variant="accent" 
+              size="lg"
+              options={{
+                source: "footer_cta",
+                service: "General Business Consultation"
+              }}
+            >
+              Book Free Consultation
+            </WhatsAppButton>
           </div>
         </div>
 

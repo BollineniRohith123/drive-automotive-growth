@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,9 +51,17 @@ const Navigation = () => {
               <Phone className="h-4 w-4" />
               <span className="font-lato font-medium">+91 94913 98821</span>
             </a>
-            <Button variant="cta" size="sm" asChild className="hidden sm:inline-flex">
-              <Link to="/contact">Book Consultation</Link>
-            </Button>
+            <WhatsAppButton 
+              variant="cta" 
+              size="sm" 
+              className="hidden sm:inline-flex"
+              options={{
+                source: "navigation_desktop",
+                service: "General Consultation"
+              }}
+            >
+              Book Consultation
+            </WhatsAppButton>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
@@ -91,9 +100,17 @@ const Navigation = () => {
                 <Phone className="h-4 w-4" />
                 <span>+91 94913 98821</span>
               </a>
-              <Button variant="cta" size="sm" className="w-full" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>Book Consultation</Link>
-              </Button>
+              <WhatsAppButton 
+                variant="cta" 
+                size="sm" 
+                className="w-full"
+                options={{
+                  source: "navigation_mobile",
+                  service: "General Consultation"
+                }}
+              >
+                Book Consultation
+              </WhatsAppButton>
             </div>
           </div>
         </div>

@@ -8,11 +8,11 @@ import teamCollaboration from "@/assets/team-collaboration.jpg";
 const ServicesPreview = () => {
   const featuredServices = [
     {
-      icon: <Users className="h-8 w-8 text-accent" />,
-      title: "Manpower Solutions",
-      description: "Comprehensive recruitment, training, and talent development programs tailored for automotive excellence.",
-      image: teamCollaboration,
-      features: ["Strategic Recruitment", "Skills Training", "Performance Management"]
+      icon: <Settings className="h-8 w-8 text-accent" />,
+      title: "Operational Excellence",
+      description: "Shop floor management, productivity optimization, and process improvement for maximum efficiency.",
+      image: automotiveTech,
+      features: ["Process Optimization", "Cost Control", "Quality Management"]
     },
     {
       icon: <BarChart3 className="h-8 w-8 text-accent" />,
@@ -22,11 +22,11 @@ const ServicesPreview = () => {
       features: ["Business Intelligence", "Performance Analytics", "Predictive Insights"]
     },
     {
-      icon: <Settings className="h-8 w-8 text-accent" />,
-      title: "Operational Excellence",
-      description: "Shop floor management, productivity optimization, and process improvement for maximum efficiency.",
-      image: automotiveTech,
-      features: ["Process Optimization", "Cost Control", "Quality Management"]
+      icon: <Users className="h-8 w-8 text-accent" />,
+      title: "Manpower Solutions",
+      description: "Comprehensive recruitment, training, and talent development programs tailored for automotive excellence.",
+      image: teamCollaboration,
+      features: ["Strategic Recruitment", "Skills Training", "Performance Management"]
     }
   ];
 

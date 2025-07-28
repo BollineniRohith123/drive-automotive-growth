@@ -187,45 +187,92 @@ const About = () => {
         </div>
       </section>
 
-      {/* Company Timeline */}
+      {/* Industry Expertise & Impact */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-montserrat font-bold text-3xl sm:text-4xl text-foreground mb-6">
-              Our <span className="text-accent">Journey</span>
+              Industry <span className="text-accent">Expertise</span>
             </h2>
             <p className="font-lato text-xl text-muted-foreground max-w-3xl mx-auto">
-              Over two decades of growth, innovation, and excellence in automotive consulting
+              Delivering measurable results across the automotive ecosystem with proven methodologies and deep industry knowledge
             </p>
           </div>
 
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-primary"></div>
-            
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div 
-                  key={index}
-                  className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'} animate-slide-up`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div className="bg-card border border-border rounded-lg p-6 shadow-card hover:shadow-elegant transition-all duration-300">
-                      <div className="font-montserrat font-bold text-xl text-accent mb-2">
-                        {item.year}
-                      </div>
-                      <p className="font-lato text-muted-foreground">
-                        {item.event}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg"></div>
+          {/* Statistics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            {[
+              { number: "27+", label: "Years of Experience", icon: <Award className="h-8 w-8 text-accent" /> },
+              { number: "15+", label: "Service Areas", icon: <Target className="h-8 w-8 text-accent" /> }
+            ].map((stat, index) => (
+              <div 
+                key={index}
+                className="text-center p-6 bg-card border border-border rounded-lg shadow-card hover:shadow-elegant transition-all duration-300 animate-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex justify-center mb-4">
+                  {stat.icon}
                 </div>
-              ))}
-            </div>
+                <div className="font-montserrat font-bold text-3xl text-primary mb-2">
+                  {stat.number}
+                </div>
+                <div className="font-lato text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Differentiators */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Automotive Industry Focus",
+                description: "Specialized exclusively in automotive sector with deep understanding of OEMs, suppliers, and aftermarket dynamics.",
+                icon: <Target className="h-8 w-8 text-accent" />
+              },
+              {
+                title: "Proven Methodologies",
+                description: "Time-tested consulting frameworks developed through decades of successful implementations across diverse automotive businesses.",
+                icon: <CheckCircle className="h-8 w-8 text-accent" />
+              },
+              {
+                title: "End-to-End Solutions",
+                description: "Comprehensive service portfolio covering strategy, operations, technology, and human resources for complete business transformation.",
+                icon: <TrendingUp className="h-8 w-8 text-accent" />
+              },
+              {
+                title: "Client-Centric Approach",
+                description: "Tailored solutions designed specifically for each client's unique challenges, goals, and market position.",
+                icon: <Heart className="h-8 w-8 text-accent" />
+              },
+              {
+                title: "Measurable Results",
+                description: "Focus on delivering quantifiable improvements in efficiency, profitability, and operational performance.",
+                icon: <Award className="h-8 w-8 text-accent" />
+              },
+              {
+                title: "Long-term Partnerships",
+                description: "Building lasting relationships with clients through ongoing support, continuous improvement, and strategic guidance.",
+                icon: <Users className="h-8 w-8 text-accent" />
+              }
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="bg-card border border-border rounded-xl p-6 shadow-card hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-accent/10 rounded-lg mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="font-montserrat font-semibold text-lg text-foreground mb-3">
+                  {item.title}
+                </h3>
+                <p className="font-lato text-muted-foreground text-sm">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -238,7 +285,7 @@ const About = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="font-lato text-xl mb-8 text-white/90">
-            Join hundreds of satisfied clients who have achieved remarkable success with our 
+            Experience remarkable business transformation with our 
             proven consulting methodologies and industry expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

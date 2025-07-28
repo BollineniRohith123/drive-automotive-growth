@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { openWhatsAppConsultation } from "@/lib/whatsapp";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -29,9 +31,36 @@ const Contact = () => {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // Also send via WhatsApp with form data
+      const whatsappMessage = `Hello Uma Consultancy! 👋
+
+I've submitted a consultation request through your website with the following details:
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+${formData.company ? `🏢 *Company:* ${formData.company}` : ''}
+${formData.phone ? `📞 *Phone:* ${formData.phone}` : ''}
+${formData.service ? `🎯 *Service Interest:* ${formData.service}` : ''}
+
+💬 *Message:*
+${formData.message}
+
+🌐 *Source:* Contact Form Submission
+
+Looking forward to your response! 🚀`;
+
+      // Open WhatsApp with form data
+      openWhatsAppConsultation({
+        source: "contact_form",
+        service: formData.service || "General Consultation",
+        name: formData.name,
+        email: formData.email,
+        message: whatsappMessage
+      });
+      
       toast({
         title: "Message Sent Successfully!",
-        description: "Thank you for your inquiry. Our team will contact you within 24 hours.",
+        description: "Your inquiry has been sent via WhatsApp. Our team will contact you within 24 hours.",
       });
       
       setFormData({
@@ -45,7 +74,7 @@ const Contact = () => {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or call us directly.",
+        description: "Failed to send message. Please try again or contact us via WhatsApp directly.",
         variant: "destructive",
       });
     } finally {
@@ -301,14 +330,29 @@ const Contact = () => {
                     Need Immediate Assistance?
                   </h3>
                   <p className="font-lato text-sm mb-4">
-                    Call us directly for urgent inquiries or immediate support.
+                    Contact us instantly via WhatsApp or call for urgent inquiries.
                   </p>
-                  <Button variant="outline" size="lg" className="w-full border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
-                    <a href="tel:+919491398821" className="flex items-center justify-center w-full">
-                      <Phone className="mr-2 h-4 w-4" />
-                      Call Now
-                    </a>
-                  </Button>
+                  <div className="space-y-3">
+                    <WhatsAppButton 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent"
+                      urgent={true}
+                      options={{
+                        source: "contact_urgent",
+                        service: "Urgent Business Consultation"
+                      }}
+                    >
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      WhatsApp Now
+                    </WhatsAppButton>
+                    <Button variant="outline" size="lg" className="w-full border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
+                      <a href="tel:+919491398821" className="flex items-center justify-center w-full">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call Now
+                      </a>
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </div>
