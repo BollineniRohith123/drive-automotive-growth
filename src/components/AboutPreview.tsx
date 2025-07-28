@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Target, Users, Award, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import umaMaheshPhoto from "@/assets/uma-mahesh-professional.jpg";
 
 const AboutPreview = () => {
   const features = [
@@ -42,7 +43,7 @@ const AboutPreview = () => {
               
               <div className="relative">
                 <img 
-                  src="/lovable-uploads/1561dbe7-14ac-46ad-b3d4-d5c5d2d4a41a.png" 
+                  src={umaMaheshPhoto} 
                   alt="Uma Mahesh - Founder & Managing Director"
                   className="w-64 h-64 rounded-lg object-cover shadow-elegant mb-6"
                 />
