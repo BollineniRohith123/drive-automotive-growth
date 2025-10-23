@@ -97,7 +97,7 @@ const About = () => {
                 </p>
                 <p>
                   Under his leadership, Uma Consultancy has grown from a specialized consulting firm 
-                  to a comprehensive solutions provider, serving OEMs, startups, established firms, 
+                  to a comprehensive solutions provider, serving automotive dealerships, OEMs, established firms, 
                   and KPOs across the automotive ecosystem.
                 </p>
                 <p>
@@ -248,7 +248,7 @@ const About = () => {
               },
               {
                 title: "Measurable Results",
-                description: "Focus on delivering quantifiable improvements in efficiency, profitability, and operational performance.",
+                description: "Focus on delivering tangible improvements in efficiency and operational performance through data-driven solutions.",
                 icon: <Award className="h-8 w-8 text-accent" />
               },
               {

@@ -64,11 +64,11 @@ const AboutPreview = () => {
                 Supporting Every Stage of Your Journey
               </h3>
               <p className="font-lato mb-4">
-                From OEMs and start-ups to established firms and KPOs - we provide solutions 
+                From automotive dealerships and OEMs to established firms and KPOs - we provide solutions
                 for profitability, customer-centricity, and employee engagement.
               </p>
               <div className="flex flex-wrap gap-2">
-                {['OEMs', 'Start-ups', 'Established Firms', 'KPOs'].map((type) => (
+                {['Automotive Dealerships', 'OEMs', 'Established Firms', 'KPOs'].map((type) => (
                   <span key={type} className="px-3 py-1 bg-white/20 rounded-full text-sm font-medium">
                     {type}
                   </span>

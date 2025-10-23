@@ -40,7 +40,7 @@ const ServicesPreview = () => {
     "Performance Reviews",
     "ERP & Knowledge Sharing",
     "Target Fulfillment",
-    "SEO Optimization",
+    "Digital Marketing and Brand Marketing",
     "Global Insights",
     "Business Strategy"
   ];

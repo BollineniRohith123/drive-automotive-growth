@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import UpdatesModal from "@/components/UpdatesModal";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,6 +44,8 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            {/* Updates Modal */}
+            <UpdatesModal />
           </div>
 
           {/* Contact Button & Mobile Menu */}
@@ -51,9 +54,9 @@ const Navigation = () => {
               <Phone className="h-4 w-4" />
               <span className="font-lato font-medium">+91 94913 98821</span>
             </a>
-            <WhatsAppButton 
-              variant="cta" 
-              size="sm" 
+            <WhatsAppButton
+              variant="cta"
+              size="sm"
               className="hidden sm:inline-flex"
               options={{
                 source: "navigation_desktop",
@@ -96,13 +99,14 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="px-3 py-2 space-y-2">
+              <UpdatesModal />
               <a href="tel:+919491398821" className="flex items-center space-x-2 text-primary">
                 <Phone className="h-4 w-4" />
                 <span>+91 94913 98821</span>
               </a>
-              <WhatsAppButton 
-                variant="cta" 
-                size="sm" 
+              <WhatsAppButton
+                variant="cta"
+                size="sm"
                 className="w-full"
                 options={{
                   source: "navigation_mobile",

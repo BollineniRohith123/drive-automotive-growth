@@ -68,9 +68,9 @@ const Services = () => {
     },
     {
       icon: <Globe className="h-8 w-8 text-accent" />,
-      title: "SEO Optimization",
-      description: "Digital marketing solutions to enhance online presence and market reach.",
-      features: ["SEO strategy", "Content optimization", "Market analysis", "Digital presence"]
+      title: "Digital Marketing and Brand Marketing",
+      description: "Comprehensive digital marketing and branding solutions to enhance online presence and market reach.",
+      features: ["Digital strategy", "Brand development", "Content marketing", "Online presence"]
     },
     {
       icon: <Eye className="h-8 w-8 text-accent" />,

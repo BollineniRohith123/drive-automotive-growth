@@ -11,6 +11,8 @@ const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
         style={{ backgroundImage: `url(${heroImage})` }}
+        role="img"
+        aria-label="Automotive business transformation and growth"
       />
 
       {/* Enhanced Overlay with better gradient */}
@@ -51,11 +53,11 @@ const Hero = () => {
               <p className="font-lato text-xl sm:text-2xl lg:text-3xl text-white/95 leading-relaxed font-light">
                 From struggling operations to market dominance - we've helped automotive companies{" "}
                 <span className="text-accent font-bold bg-accent/10 px-2 py-1 rounded-md">
-                  increase profitability by 40%
+                  achieve significant profitability improvements
                 </span>{" "}
                 and{" "}
                 <span className="text-accent font-bold bg-accent/10 px-2 py-1 rounded-md">
-                  reduce operational costs by 30%
+                  optimize operational efficiency
                 </span>
               </p>
             </div>
@@ -74,8 +76,8 @@ const Hero = () => {
                   delay: "0.1s"
                 },
                 {
-                  title: "Service Centers",
-                  description: "Improve customer satisfaction, increase revenue per service",
+                  title: "Automotive Dealerships",
+                  description: "Enhance customer experience, optimize sales operations, boost performance",
                   delay: "0.2s"
                 }
               ].map((item, index) => (
@@ -104,6 +106,7 @@ const Hero = () => {
                   source: "hero_section",
                   service: "Free Business Assessment"
                 }}
+                aria-label="Contact us via WhatsApp for a free business assessment"
               >
                 Get Your FREE Business Assessment
               </WhatsAppButton>
@@ -111,6 +114,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="text-lg px-10 py-5 text-white border-2 border-white/80 hover:bg-white hover:text-primary hover:scale-105 transition-all duration-300 font-semibold backdrop-blur-sm"
+                aria-label="View our success stories and case studies"
               >
                 <Link to="/services" className="flex items-center">
                   View Success Stories
@@ -137,7 +141,7 @@ const Hero = () => {
                 {
                   icon: <Users className="h-10 w-10 text-accent" />,
                   number: "OEMs",
-                  label: "to Startups - All Scales",
+                  label: "to Dealerships - All Scales",
                   delay: "0.4s"
                 }
               ].map((item, index) => (

@@ -1,0 +1,25 @@
+{
+  "name": "Uma Consultancy - Automotive Dealership & OEM Consulting",
+  "short_name": "Uma Consultancy",
+  "description": "Leading automotive dealership and OEM consulting firm with 27+ years of expertise in business transformation and digital marketing.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/placeholder.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/placeholder.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["business", "consulting", "automotive"],
+  "lang": "en",
+  "scope": "/"
+}
