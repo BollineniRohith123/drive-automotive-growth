@@ -10,7 +10,7 @@
     "build:prod": "npm run lint:fix && vite build --mode production",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "preview": "vite preview",
+    "start": "vite preview --port 8271",
     "type-check": "tsc --noEmit",
     "analyze": "npm run build && npx vite-bundle-analyzer dist/stats.html"
   },
